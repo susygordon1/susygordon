@@ -132,11 +132,16 @@
 
   .card-icon { font-size: 1.8rem; margin-bottom: 1rem; line-height: 1; }
   .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: 0.4rem; line-height: 1.2; }
-  .card-subtitle { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 1.5rem; font-weight: 500; }
+  .card-subtitle { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
+  .mmm .card-subtitle { color: var(--gold); }
+  .joy .card-subtitle { color: var(--teal); }
+  .fwfs .card-subtitle { color: var(--orange); }
   .card-bullets { list-style: none; margin-bottom: 2rem; flex: 1; }
   .card-bullets li { font-size: 0.78rem; color: var(--cream-dim); line-height: 1.8; padding-left: 1rem; position: relative; }
   .card-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--card-accent, var(--gold)); font-size: 0.7rem; }
   .card-desc { font-size: 0.8rem; color: var(--cream-dim); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
+  .card-message { font-size: 0.78rem; color: var(--cream-dim); line-height: 1.8; font-style: italic; margin-bottom: 1.2rem; }
+  .card-divider { height: 1px; background: rgba(201,168,76,0.15); margin: 1.2rem 0; }
   .card-tag { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cream-dim); opacity: 0.5; margin-bottom: 1.2rem; }
 
   .card-link { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border: 1px solid; transition: all 0.3s; text-decoration: none; margin-top: auto; }
@@ -206,7 +211,7 @@
       <h1 class="hero-name">Susy<em>Gordon</em></h1>
       <p class="hero-tagline">Forged in the Fire.</p>
       <p class="hero-tagline-b">In Pursuit of Purpose.</p>
-      <p class="hero-verse">Matthew 7:7 &nbsp;·&nbsp; "Ask and it will be given. Seek and you will find."</p>
+      <p class="hero-verse">Philippians 1:6 &nbsp;·&nbsp; "He who began a good work in you will carry it on to completion."</p>
       <p class="hero-bio">I build platforms for people's stories — from the boardroom to the back roads to the street corner. Three ecosystems. One mission. Every level speaks life to the one below it.</p>
       <p class="hero-origin">Building from the front seat of my car while driving rideshare through Fort Worth, Texas. The car became a prayer closet, a studio, a sanctuary, a conference room, and a mission field.</p>
       <a href="#platforms" class="btn-primary">See My Work</a>
@@ -219,7 +224,6 @@
   <div class="section-divider"><span>The Ecosystem</span></div>
   <div class="platforms-intro">
     <h2>Three platforms. One through-line.</h2>
-    <p>Every level speaks life to the one below it. Everyone is in motion. Nobody stays still.</p>
   </div>
   <div class="platforms-grid">
 
@@ -227,6 +231,8 @@
       <div class="card-icon">📡</div>
       <h3 class="card-title">Mega Mission Media</h3>
       <p class="card-subtitle">Media with a Mission</p>
+      <p class="card-message">From lost to launched. I don't know everything — but what I do know, I will share with you and help you build. Whether you're a founder, entrepreneur, or startup just figuring it out, if you don't know where to start, I'll help you find the way.</p>
+      <div class="card-divider"></div>
       <ul class="card-bullets">
         <li>Website builds, rebuilds &amp; maintenance</li>
         <li>Social media content &amp; management</li>
@@ -242,8 +248,15 @@
     <div class="platform-card joy">
       <div class="card-icon">🚗</div>
       <h3 class="card-title">Joy Rides</h3>
-      <p class="card-subtitle">Real Roads. Real Stories.</p>
-      <p class="card-desc">Everyday people. Honest testimony. The documentary series and podcast capturing the voices you meet on the road — and checking back in to ask: where are they now?</p>
+      <p class="card-subtitle">Unfiltered. Unscripted.</p>
+      <p class="card-message">Everyday people. Honest testimony. The documentary series and podcast capturing the voices you meet on the road — and checking back in to ask: where are they now?</p>
+      <div class="card-divider"></div>
+      <ul class="card-bullets">
+        <li>Schedule your Joy Ride &amp; share your story</li>
+        <li>Speak life to others through your testimony</li>
+        <li>Traveling executive? Need a ride to DFW Airport? Skip Uber — call Susy</li>
+        <li>Every ride is a mission field</li>
+      </ul>
       <p class="card-tag">Passion Project &nbsp;·&nbsp; Tier B</p>
       <a href="#" class="card-link">Coming Soon</a>
     </div>
@@ -251,7 +264,9 @@
     <div class="platform-card fwfs">
       <div class="card-icon">🏛️</div>
       <h3 class="card-title">Fort Worth Fitness Sanctuary</h3>
-      <p class="card-subtitle">The Unseen. About to Be Seen.</p>
+      <p class="card-subtitle">Work in Progress.</p>
+      <p class="card-message">The first of its kind. A sponsored sanctuary where the unseen come to get their mind right, their body right, their spirit right — and walk out with a story worth telling. This is the North Star. Everything we build points here.</p>
+      <div class="card-divider"></div>
       <ul class="card-bullets">
         <li>Intake &amp; case management</li>
         <li>Nutrition counseling</li>
@@ -271,9 +286,9 @@
 <section class="story" id="story">
   <div class="story-inner">
     <div class="section-divider"><span>My Story</span></div>
-    <blockquote>"On the Trinity Trail, I heard it three times — <em>Seek and Find.</em> That was the beginning."</blockquote>
-    <p class="story-attr">— Susy Gordon &nbsp;·&nbsp; Founder &nbsp;·&nbsp; Fort Worth, TX</p>
-    <p class="story-phil">Philippians 1:6 &nbsp;·&nbsp; "He who began a good work in you will carry it on to completion."</p>
+    <p class="story-attr">Susy Gordon &nbsp;·&nbsp; Founder &nbsp;·&nbsp; Fort Worth, Texas</p>
+    <blockquote>"Seek and Find"</blockquote>
+    <p class="story-phil">Matthew 7:7</p>
     <p class="story-body">
       I spent 25 years in corporate America — IT strategy, agile transformation, broadcasting, project management. I was good at it. But in June 2025, I stepped away from all of it to build something that actually mattered to me.
       <br><br>
