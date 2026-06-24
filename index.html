@@ -13,23 +13,33 @@
     --charcoal-card: #252525;
     --gold: #c9a84c;
     --gold-light: #e2c97e;
-    --teal: #4ab8b8;
-    --teal-dark: #337f7f;
+    --teal: #2d8f8f;
+    --teal-dark: #1f6666;
     --cream: #f0ebe0;
     --cream-dim: #b8b0a0;
+    --cream-bg: #f5f0e8;
+    --cream-bg-dark: #ede7d9;
     --orange: #e07b4a;
     --max-width: 1100px;
     --page-pad: 0 5%;
   }
+
+  /* TICKER */
+  .ticker-wrap { background: #0a0a0a; overflow: hidden; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .ticker-track { display: flex; width: max-content; animation: ticker 35s linear infinite; }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item { white-space: nowrap; padding: 0 2.5rem; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream-dim); }
+  .ticker-item::after { content: '·'; margin-left: 2.5rem; color: var(--gold); }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   html { scroll-behavior: smooth; }
   body { background: var(--charcoal); color: var(--cream); font-family: 'Montserrat', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(20,20,20,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; letter-spacing: 0.12em; color: var(--cream); text-decoration: none; }
+  nav { position: fixed; top: 2.2rem; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: #f5f0e8; backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.25); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; letter-spacing: 0.12em; color: var(--charcoal); text-decoration: none; }
   .nav-logo span { color: var(--teal); }
   nav ul { list-style: none; display: flex; gap: 2.5rem; }
-  nav ul a { color: var(--cream-dim); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+  nav ul a { color: #555045; text-decoration: none; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
   nav ul a:hover { color: var(--teal); }
 
   /* HERO */
@@ -113,36 +123,56 @@
   .section-inner { max-width: var(--max-width); margin: 0 auto; padding: var(--page-pad); }
   .section-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
   .section-divider span { font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--teal); font-weight: 600; white-space: nowrap; }
-  .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.35); }
 
   /* PLATFORMS */
-  .platforms { padding: 6rem 5%; }
-  .platforms-intro { text-align: center; margin-bottom: 4rem; }
-  .platforms-intro h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--cream); margin-bottom: 1rem; }
-  .platforms-intro p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--cream-dim); max-width: 500px; margin: 0 auto; }
-  .platforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: var(--max-width); margin: 0 auto; }
+  .platforms { padding: 6rem 5%; background: var(--cream-bg); }
+  .platforms-intro { text-align: center; margin-bottom: 2.5rem; }
+  .platforms-intro h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: #0a0a0a; margin-bottom: 1rem; }
+  .platforms-intro p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #4a4540; max-width: 500px; margin: 0 auto; }
 
-  .platform-card { background: var(--charcoal-card); border: 1px solid rgba(201,168,76,0.12); padding: 2.5rem 2rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.35s; position: relative; overflow: hidden; }
+  .platforms-box {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #1a1a1a;
+    border: 1.5px solid var(--teal);
+    padding: 3.5rem 3rem;
+    border-radius: 2px;
+  }
+  .platforms-box .platforms-intro h2 { color: var(--cream); }
+  .platforms-box .platforms-intro p { color: var(--cream-dim); }
+  .platforms-box .section-divider span { color: var(--teal); }
+  .platforms-box .platform-card { background: #252525; border: 1px solid rgba(255,255,255,0.08); }
+  .platforms-box .platform-card:hover { background: #2e2e2e; border-color: rgba(201,168,76,0.3); }
+  .platforms-box .card-title { color: var(--cream) !important; }
+  .platforms-box .card-message { color: var(--cream-dim) !important; }
+  .platforms-box .card-bullets li { color: var(--cream-dim) !important; }
+  .platforms-box .card-desc { color: var(--cream-dim) !important; }
+  .platforms-box .card-tag { color: #666 !important; }
+  .platforms-box .card-divider { background: rgba(255,255,255,0.08) !important; }
+  .platforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+  .platform-card { background: #ffffff; border: 1px solid rgba(201,168,76,0.3); padding: 2.5rem 2rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.35s; position: relative; overflow: hidden; }
   .platform-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--card-accent, var(--gold)); transform: scaleX(0); transition: transform 0.35s; transform-origin: left; }
   .platform-card:hover::before { transform: scaleX(1); }
-  .platform-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); background: #2a2a2a; }
+  .platform-card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-4px); background: #fdf8f0; }
   .platform-card.mmm { --card-accent: var(--gold); }
   .platform-card.joy { --card-accent: var(--teal); }
   .platform-card.fwfs { --card-accent: var(--orange); }
 
   .card-icon { font-size: 1.8rem; margin-bottom: 1rem; line-height: 1; }
-  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: 0.4rem; line-height: 1.2; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #0a0a0a; margin-bottom: 0.4rem; line-height: 1.2; }
   .card-subtitle { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
   .mmm .card-subtitle { color: var(--gold); }
   .joy .card-subtitle { color: var(--teal); }
   .fwfs .card-subtitle { color: var(--orange); }
   .card-bullets { list-style: none; margin-bottom: 2rem; flex: 1; }
-  .card-bullets li { font-size: 0.78rem; color: var(--cream-dim); line-height: 1.8; padding-left: 1rem; position: relative; }
+  .card-bullets li { font-size: 0.78rem; color: #2a2520; line-height: 1.8; padding-left: 1rem; position: relative; }
   .card-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--card-accent, var(--gold)); font-size: 0.7rem; }
-  .card-desc { font-size: 0.8rem; color: var(--cream-dim); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
-  .card-message { font-size: 0.78rem; color: var(--cream-dim); line-height: 1.8; font-style: italic; margin-bottom: 1.2rem; }
-  .card-divider { height: 1px; background: rgba(201,168,76,0.15); margin: 1.2rem 0; }
-  .card-tag { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cream-dim); opacity: 0.5; margin-bottom: 1.2rem; }
+  .card-desc { font-size: 0.8rem; color: #2a2520; line-height: 1.8; flex: 1; margin-bottom: 2rem; }
+  .card-message { font-size: 0.78rem; color: #2a2520; line-height: 1.8; font-style: italic; margin-bottom: 1.2rem; }
+  .card-divider { height: 1px; background: rgba(201,168,76,0.3); margin: 1.2rem 0; }
+  .card-tag { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #888070; margin-bottom: 1.2rem; }
 
   .card-link { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border: 1px solid; transition: all 0.3s; text-decoration: none; margin-top: auto; }
   .mmm .card-link { color: var(--gold); border-color: var(--gold); }
@@ -164,11 +194,16 @@
   .story-body { font-size: 0.83rem; color: var(--cream-dim); line-height: 2; text-align: left; columns: 2; column-gap: 3rem; }
 
   /* CONNECT */
-  .connect { padding: 6rem 5%; }
+  .connect { padding: 6rem 5%; background: var(--cream-bg); }
+  .connect-box { max-width: var(--max-width); margin: 0 auto; border: 1.5px solid var(--gold); padding: 3.5rem 4rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+  .connect-box .connect-label { font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 0.8rem; }
+  .connect-phone { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--charcoal); text-decoration: none; font-weight: 400; letter-spacing: 0.05em; border: 1px solid var(--charcoal); padding: 0.8rem 2rem; transition: all 0.3s; white-space: nowrap; display: inline-block; }
+  .connect-phone:hover { background: var(--charcoal); color: var(--cream); }
+  @media (max-width: 700px) { .connect-box { grid-template-columns: 1fr; } }
   .connect-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-  .connect-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; margin-bottom: 1rem; }
+  .connect-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: #0a0a0a; margin-bottom: 1rem; }
   .connect-inner h2 em { font-style: italic; color: var(--gold); }
-  .connect-inner p { font-size: 0.82rem; color: var(--cream-dim); margin-bottom: 2.5rem; line-height: 1.9; }
+  .connect-inner p { font-size: 0.82rem; color: #2a2520; margin-bottom: 2.5rem; line-height: 1.9; }
   .connect-email { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal-dark); padding-bottom: 0.2rem; margin-bottom: 2.5rem; transition: color 0.3s; }
   .connect-email:hover { color: var(--gold); border-color: var(--gold); }
 
@@ -182,7 +217,27 @@
     .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
     .hero-image-wrap { max-height: 380px; }
     .hero-image-wrap img { height: 380px; }
-    .platforms-grid { grid-template-columns: 1fr; }
+  
+  .platforms-box {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #1a1a1a;
+    border: 1.5px solid var(--teal);
+    padding: 3.5rem 3rem;
+    border-radius: 2px;
+  }
+  .platforms-box .platforms-intro h2 { color: var(--cream); }
+  .platforms-box .platforms-intro p { color: var(--cream-dim); }
+  .platforms-box .section-divider span { color: var(--teal); }
+  .platforms-box .platform-card { background: #252525; border: 1px solid rgba(255,255,255,0.08); }
+  .platforms-box .platform-card:hover { background: #2e2e2e; border-color: rgba(201,168,76,0.3); }
+  .platforms-box .card-title { color: var(--cream) !important; }
+  .platforms-box .card-message { color: var(--cream-dim) !important; }
+  .platforms-box .card-bullets li { color: var(--cream-dim) !important; }
+  .platforms-box .card-desc { color: var(--cream-dim) !important; }
+  .platforms-box .card-tag { color: #666 !important; }
+  .platforms-box .card-divider { background: rgba(255,255,255,0.08) !important; }
+  .platforms-grid { grid-template-columns: 1fr; }
     .story-body { columns: 1; }
     nav ul { gap: 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -190,6 +245,30 @@
 </style>
 </head>
 <body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Web Design &amp; Development</span>
+    <span class="ticker-item">Need a ride to DFW Airport? Call Susy — 817-860-8989</span>
+    <span class="ticker-item">Podcast Production</span>
+    <span class="ticker-item">Social Media Content</span>
+    <span class="ticker-item">AI Content Solutions</span>
+    <span class="ticker-item">Share Your Story on Joy Rides</span>
+    <span class="ticker-item">Networking Events &amp; Speaker Luncheons</span>
+    <span class="ticker-item">Fort Worth · Dallas · DFW Metro</span>
+    <span class="ticker-item">One Hub. Three Platforms. One Mission.</span>
+    <span class="ticker-item">Web Design &amp; Development</span>
+    <span class="ticker-item">Need a ride to DFW Airport? Call Susy — 817-860-8989</span>
+    <span class="ticker-item">Podcast Production</span>
+    <span class="ticker-item">Social Media Content</span>
+    <span class="ticker-item">AI Content Solutions</span>
+    <span class="ticker-item">Share Your Story on Joy Rides</span>
+    <span class="ticker-item">Networking Events &amp; Speaker Luncheons</span>
+    <span class="ticker-item">Fort Worth · Dallas · DFW Metro</span>
+    <span class="ticker-item">One Hub. Three Platforms. One Mission.</span>
+  </div>
+</div>
 
 <nav>
   <a href="#" class="nav-logo">Susy <span>Gordon</span></a>
@@ -221,11 +300,12 @@
 
 <!-- PLATFORMS -->
 <section class="platforms" id="platforms">
-  <div class="section-divider"><span>The Ecosystem</span></div>
-  <div class="platforms-intro">
-    <h2>Three platforms. One through-line.</h2>
-  </div>
-  <div class="platforms-grid">
+  <div class="platforms-box">
+    <div class="section-divider"><span>The Ecosystem</span></div>
+    <div class="platforms-intro">
+      <h2>Three platforms. One through-line.</h2>
+    </div>
+    <div class="platforms-grid">
 
     <div class="platform-card mmm">
       <div class="card-icon">📡</div>
@@ -279,6 +359,7 @@
       <a href="#" class="card-link">Coming Soon</a>
     </div>
 
+    </div>
   </div>
 </section>
 
@@ -301,13 +382,15 @@
 
 <!-- CONNECT -->
 <section class="connect" id="connect">
-  <div class="connect-inner">
-    <div class="section-divider"><span>Connect</span></div>
-    <h2>Let's map out<br><em>your blueprint.</em></h2>
-    <p>
-      Whether you're a founder who needs a digital presence, someone hustling and getting somewhere who wants to share their road, or a heart that wants to support the Sanctuary — the door is always open here.
-    </p>
-    <a href="mailto:hello@susygordon.com" class="connect-email">hello@susygordon.com</a>
+  <div class="connect-box">
+    <div>
+      <p class="connect-label">Ready to Connect?</p>
+      <h2 class="connect-inner" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:#0a0a0a;margin-bottom:1rem;">Let's talk about<br><em style="font-style:italic;color:var(--gold);">your business.</em></h2>
+      <p style="font-size:0.82rem;color:#2a2520;line-height:1.9;max-width:480px;">Whether you're a founder who needs a digital presence, someone hustling down the road with a story to share, or a heart that wants to support the Sanctuary — the door is always open here.</p>
+    </div>
+    <div style="text-align:center;">
+      <a href="tel:8178608989" class="connect-phone">817-860-8989</a>
+    </div>
   </div>
 </section>
 
